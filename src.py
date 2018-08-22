@@ -7,7 +7,7 @@ class Game:
 		self.passes = sects_passes[1]
 		self.default = self.sects[0]
 	def start(self):
-		#self.default.display(self.default.parse())
+		self.default.display(self.default.parse())
 		pass
 
 	def run(self, nm, kind):
@@ -149,6 +149,7 @@ def main_parse(filename):
 	try: default.info = default.info[:-2]
 	except: pass
 	return sections, passages
+
 if __name__ == '__main__':
 	game = Game(main_parse("game.puf"))
 	game.start()
