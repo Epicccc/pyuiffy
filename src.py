@@ -7,7 +7,7 @@ class Game:
 		self.passes = sects_passes[1]
 		self.default = self.sects[0]
 	def start(self):
-		#self.default.display(self.default.parse())
+		self.default.display(self.default.parse())
 		pass
 
 	def run(self, nm, kind):
