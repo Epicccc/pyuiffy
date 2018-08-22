@@ -1,0 +1,20 @@
+This is my house. You can go to the [[kitchen]], [[bedroom]], or [[living room]].
+
+[[kitchen]]:
+	This is the kitchen.
+	You can read more [here].
+	You can go to the [[bedroom]].
+	You can also go to the [[living room]].
+
+[[bedroom]]:
+	This is the bedroom.
+	You can go to the [[kichen]].
+	You can also go to the [[living room]].
+
+[[living room]]:
+	This is the living room.
+	You can go to the [[kichen]].
+	You can also go to the [[bedroom]].
+
+[here]:
+	The kitchen is messy and has food, plates, and pots scattered everywhere.
