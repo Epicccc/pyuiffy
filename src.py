@@ -149,7 +149,9 @@ def main_parse(filename):
 	try: default.info = default.info[:-2]
 	except: pass
 	return sections, passages
-
-game = Game(main_parse("game.puf"))
-game.start()
+if __name__ == '__main__':
+	game = Game(main_parse("game.puf"))
+	game.start()
+else:
+	main_parse("game.puf")
 end = input("Press any key to continue...")
