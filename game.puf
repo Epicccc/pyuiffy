@@ -18,3 +18,11 @@ This is my house. You can go to the [[kitchen]], [[bedroom]], or [[living room]]
 
 [here]:
 	The kitchen is messy and has food, plates, and pots scattered everywhere.
+
+[more]:
+	The living room has a [couch] and a [tv].
+
+[couch]:
+	The couch is comfy and in an "L" shape facing the [tv].
+[tv]:
+	The tv has many shows and can waste a lot of time.
