@@ -1,4 +1,4 @@
-import re, os
+import re, os, random
 
 class Game:
 	"""docstring for Game"""
@@ -35,6 +35,24 @@ class Section:
 		self.options = []
 		self.choice = 1
 		self.numoptions = 0
+		nothing = False
+		with open("visualsquiffy.txt", "r") as f:
+			print f.read()
+			if f.read() == "":
+				nothing = True
+			else:
+				index = 0
+				for i in f:
+					if index == 0:
+						self.x = int(i)
+					elif index == 1:
+						self.y = int(i)
+		if nothing:
+			self.x = random.randint(0,700)
+			self.y = random.randint(0,500)
+			with open("visualsquiffy.txt", "w") as f:
+				f.write(str(self.x)+"\n")
+				f.write(str(self.y))
 
 	def display(self,printinfo):
 		os.system("cls")
@@ -77,6 +95,8 @@ class Passage:
 		self.line = line
 		self.options = []
 		self.numoptions = 0
+		self.x = random.randint(0,700)
+		self.y = random.randint(0,500)
 
 	def display(self,printinfo):
 		valid = False
@@ -153,6 +173,10 @@ def main_parse(filename):
 if __name__ == '__main__':
 	game = Game(main_parse("game.puf"))
 	game.start()
+	end = input("Press any key to continue...")
 else:
-	main_parse("game.puf")
-end = input("Press any key to continue...")
+	sections, passages = main_parse("game.puf")
+	for i in sections:
+		i.parse()
+	for i in passages:
+		i.parse()
