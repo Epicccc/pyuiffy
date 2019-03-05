@@ -9,16 +9,17 @@ class Game:
 	def start(self):
 		self.default.display(self.default.parse())
 		pass
+	
 
 	def run(self, nm, kind):
 		if kind == 1:
 			for i in self.passes:
-				print "The passage's name is "+i.nm+". The required one is "+nm+"."
+				print ("The passage's name is "+i.nm+". The required one is "+nm+".")
 				if i.nm == nm: 
 					i.display(i.parse())
 		elif kind == 2:
 			for i in self.sects:
-				print "The passage's name is "+i.nm+". The required one is "+nm+"."
+				print ("The passage's name is "+i.nm+". The required one is "+nm+".")
 				if i.nm == nm: i.display(i.parse())
 
 	def end(self):
@@ -37,7 +38,7 @@ class Section:
 		self.numoptions = 0
 		nothing = False
 		with open("visualsquiffy.txt", "r") as f:
-			print f.read()
+			print (f.read())
 			if f.read() == "":
 				nothing = True
 			else:
@@ -58,13 +59,13 @@ class Section:
 		os.system("cls")
 		valid = False
 		while not valid:
-			print printinfo
-			self.choice = raw_input(">")
+			print (printinfo)
+			self.choice = input(">")
 			try:
 				self.choice = int(self.choice)
 				valid = True
 			except: 
-				print "Please enter a number between 1 and "+self.numoptions+" as your choice."
+				print ("Please enter a number between 1 and "+self.numoptions+" as your choice.")
 				continue
 			for i in self.options:
 				if i[2] == int(self.choice):
@@ -101,20 +102,20 @@ class Passage:
 	def display(self,printinfo):
 		valid = False
 		while not valid:
-			print printinfo
+			print (printinfo)
 			if self.options != []:
-				self.choice = raw_input(">")
+				self.choice = input(">")
 			else:
-				print game.end()
+				print (game.end())
 			try:
 				self.choice = int(self.choice)
 				valid = True
 			except: 
-				print "Please enter a number between 1 and "+self.numoptions+" as your choice."
+				print ("Please enter a number between 1 and "+self.numoptions+" as your choice.")
 				continue
 			for i in self.options:
 				if i[2] == int(self.choice):
-					print i[0],i[1]
+					print (i[0],i[1])
 					game.run(i[0],i[1])
 
 	def parse(self):

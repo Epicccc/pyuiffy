@@ -1,0 +1,19 @@
+Test info leads to [[here]].
+[[here]]:
+You are now here!
+You can look at [this] if you want.
+You can try the [test], but I wouldn't recommend it since it's quite buggy.
+When you're done, you can [[leave]].
+[this]:
+This is a fish. Why not [[stop]]? You can also say, "[[hi]]."
+[test]:
+This is a TEST. Stop looking.
+@set not said_hi
+[[stop]]:
+Blah. You can [[leave]] now.
+[[hi]]:
+Hi! You can [[leave]] now.
+If you've been here before, it will say True here: {said_hi}.
+@set said_hi = True
+[[leave]]:
+You've left.
